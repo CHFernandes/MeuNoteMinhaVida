@@ -8,10 +8,14 @@ $(document).ready(function () {
                 senha: $("#senha").val()
             },
             success: function (retorno) {
-                if (retorno == '1') {
-                    window.location = 'html/menu.html';
+                if (retorno == '2') {
+                    window.location = 'html/niaa.html';
                 } else {
-                    alert("Usuário ou senha incorretos");
+                    if (retorno == '1'){
+                        window.location = 'html/menu.html';
+                    }else{
+                        alert("Usuário ou senha incorretos");
+                    }
                 }
             }
         });

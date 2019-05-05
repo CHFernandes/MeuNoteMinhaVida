@@ -13,7 +13,11 @@
         session_start();
         $result = $query->fetch_assoc();
         $_SESSION['id'] = $result['Idacademico'];
-        $retorno = '1';
+        if ($result['Idacademico'] == 4){
+            $retorno = '2';
+        }else{
+            $retorno = '1';
+        }
     }else{
         $retorno = '0';
     }
