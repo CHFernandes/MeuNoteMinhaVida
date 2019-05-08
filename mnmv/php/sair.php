@@ -4,7 +4,7 @@
 	//destruimos a sessão
 	session_destroy();
 
-	header('location:../login.html');
+	header('location:../index.html');
 
 
 ?>

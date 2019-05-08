@@ -5,10 +5,10 @@ $(document).ready(function () {
             url: "../php/baixa.php",
            data: {
                 num: $("#num").val(),
-                tipo: $("#tipo").val()
+                tipo: $(".tipo").val()
             },
             success: function (retorno) {
-                alert (retorno);
+                
                 if (retorno == '1') {
                     alert("Baixa realizada com sucesso");
                     window.location = 'niaa.html';
