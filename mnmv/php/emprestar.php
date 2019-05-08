@@ -7,10 +7,11 @@
     $numeracao = $_POST["equipamento"];
     $tipo = $_POST["tipo"];
 
-    $sql = "SELECT * FROM equipamento WHERE numeracao = '$numeracao' AND tipo = '$tipo' AND status = '0' ";
+for($i = 0; $i < count($numeracao); $i++){
+    $sql = "SELECT * FROM equipamento WHERE numeracao = '$numeracao[$i]' AND tipo = '$tipo[$i]' AND status = '0' ";
 
     $query = $mysqli->query($sql);
-
+    
     if($query->num_rows == 1){
         $row = mysqli_fetch_assoc($query);
         $id = $row['idequipamento'];
@@ -27,9 +28,12 @@
         $datafim = $dataout->format('Y-m-d H:i:s');
         $sql3 = "INSERT INTO emprestimo(idacademico, idequipamento, datainicio, datafim, status) VALUES ('$user','$id','$datainicio','$datafim', '1')";
         $query3 = mysqli_query($mysqli,$sql3);
-        echo '1';
+        $teste = '1';
     }else{
-        echo '0';
+        $teste = '0';
     }
+}
+
+echo $teste;
 
 ?>
