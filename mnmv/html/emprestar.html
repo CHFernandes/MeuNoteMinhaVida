@@ -8,11 +8,15 @@
     <script type="text/javascript" src="../js/verifica.js"></script>
     <script type="text/javascript" src="../js/emprestar.js"></script>
     <script type="text/javascript" src="../js/insert_0.js"></script>
+    <script type="text/javascript" src="../js/add.js"></script>
 </head>
 
 <body>
+    <h2 align="center" border="0">Equipamentos disponíveis</h2>
+    <table align="center" border="0" id="inserir">
+    </table>
     <table align="center" border="0">
-        <tbody>
+        <tbody id="body">
             <tr>
                 <td>Tipo</td>
                 <td><select class="tipo">
@@ -25,41 +29,16 @@
             </tr>
             <tr>
                 <td>Equipamento</td>
-                <td><select class="equip"></select></td>
-            </tr>
-            <tr>
-                <td>Tipo</td>
-                <td><select class="tipo">
-                        <option></option>
-                        <option value="N">Notebook</option>
-                        <option value="F">Fonte</option>
-                        <option value="T">Torre</option>
-                        <option value="C">Carrinho</option>
-                    </select></td>
-            </tr>
-            <tr>
-                <td>Equipamento</td>
-                <td><select class="equip"></select></td>
-            </tr>
-            <tr>
-                <td>Tipo</td>
-                <td><select class="tipo">
-                        <option></option>
-                        <option value="N">Notebook</option>
-                        <option value="F">Fonte</option>
-                        <option value="T">Torre</option>
-                        <option value="C">Carrinho</option>
-                    </select></td>
-            </tr>
-            <tr>
-                <td>Equipamento</td>
-                <td><select class="equip"></select></td>
+                <td><input type="text" class="equip"></td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
+                <td><button id="add">Adicionar equipamento</button></td>
                 <td><button id="enviar">Enviar</button></td>
-                <td><a href="menu.html"><button>Voltar</button></a></td>
+            </tr>
+            <tr>
+                <td colspan="2"><a href="menu.html"><button>Voltar</button></a></td>
             </tr>
         </tfoot>
     </table>
