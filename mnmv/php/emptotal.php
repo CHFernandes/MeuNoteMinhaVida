@@ -26,10 +26,11 @@ if(mysqli_num_rows($result) > 0){
         $retorno[$i]['tipo'] = $row2['tipo'];
         $retorno[$i]['datainicio'] = $row['datainicio'];
         $retorno[$i]['datafim'] =  $row['datafim'];
+        $retorno[$i]['status'] = $row['status'];
         if($row['status'] == '0'){
-            $retorno[$i]['status'] = 'Fechado';
+            $retorno[$i]['statusstring'] = 'Fechado';
         }else{
-            $retorno[$i]['status'] = 'Aberto';
+            $retorno[$i]['statusstring'] = 'Aberto';
         }
         $i = $i + 1;
     }
