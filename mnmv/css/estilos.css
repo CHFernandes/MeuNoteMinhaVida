@@ -1,2 +1,76 @@
-.estilos{
+.barratopo{
+text-align: center;
+}
+body{
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 100%;
+    height:100%;
+    background-color: white;
+    border-top-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    background-image: url("../img/Branquinho%20Lisinho2.png");
+    background-size: 8%;
+    background-repeat: no-repeat;
+    background-position: 99% 98%;
+    background-attachment: fixed;
+    background-image: opacity 0.1;
+}
+
+.barramenu {
+float: left; 
+width: 20%;
+height: 113%;
+background-color: #B22222;
+}
+.barramenu table tr td button {
+    width: 100%;
+    height:100%;
+    border-style: none;
+    border-color: #B22222;
+    background-color: #B22222;
+    font-family: Andale Mono, serif;
+    font-size: 120%;
+}
+.barramenu table {
+    width: 100%;
+    height:100%;
+    border-color: #B22222;
+    border-style: solid;
+}
+.barramenu table td {
+    border-color: #B22222;
+    border-style: solid;
+}
+
+.barramenu table tr {
+    border-color: #B22222;
+    border-style: solid;
+}
+
+.barramenu table tr td button:hover {
+    width: 100%;
+    height:100%;
+    border-style: none;
+    border-color: black;
+    background-color: black;
+    color: white;
+    font-family: Andale Mono, serif;
+    font-size: 120%;
+}
+
+.arena{
+margin-left: 20%;
+    }
+
+.arena img {
+    
+}
+.barrainferior{
+    margin-left: 20%;
+    margin-top: 50%;
+    font-family: Andale Mono, serif;
+    font-weight: 100;
+    text-align: center;
 }
