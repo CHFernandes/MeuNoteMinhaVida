@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $("#enviar").click(function () {
-        alert("Botão clicado");
         $.ajax({
             type: "POST",
             url: "../php/cadastrar.php",
