@@ -14,7 +14,7 @@ $(document).ready(function () {
         $.ajax({
             type: "GET",
             datatype: "json",
-            url: "../php/insert.php",
+            url: "../php/equipamento.php",
             success: function (lista) {
 
                 var stringster = JSON.parse(lista);
