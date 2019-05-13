@@ -4,7 +4,7 @@ session_start();
 
 include('database.php');
 
-$sql = "SELECT * FROM equipamento WHERE status = '0'";
+$sql = "SELECT * FROM equipamento";
 
 $result = mysqli_query($mysqli, $sql);
 
@@ -14,6 +14,7 @@ if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_assoc($result)){
         $retorno[$i]['numeracao'] = $row['numeracao'];
         $retorno[$i]['tipo'] = $row['tipo'];
+        $retorno[$i]['status'] = $row['status'];
         $i = $i + 1;
     }
 }

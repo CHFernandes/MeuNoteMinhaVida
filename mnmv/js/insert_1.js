@@ -21,7 +21,7 @@ $(document).ready(function () {
 
                 $(".equip").html("");
                 for (var i = stringster.length - 1; i >= 0; i--) {
-                    if (stringster[i].status == '0') {
+                    if (stringster[i].status == '1') {
                         var o = 0;
                         while (o < name.length) {
                             if (stringster[i].tipo == tipo[o]) {
