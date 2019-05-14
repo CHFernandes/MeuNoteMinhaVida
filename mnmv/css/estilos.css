@@ -91,7 +91,7 @@ border-width: 3px;
 
 .sair{
 border: none;
-font-size: 18px;
+font-size: 16px;
 margin-left: 80%;
 background-color: ##92a8d1;
 }
@@ -115,4 +115,4 @@ background-color: ##92a8d1;
     margin: auto;
     border-style: none;
     border-collapse: collapse;
-      }
+}
