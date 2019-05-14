@@ -78,9 +78,18 @@ margin-left: 20%;
 .botoes{
 border: none;
 font-size: 22px;
+margin-left: 20%;
+background-color: ##92a8d1;
 }
 
 .titulo{
     font: green;
     background-color: white;
+}
+
+.sair{
+border: none;
+font-size: 18px;
+margin-left: 80%;
+background-color: ##92a8d1;
 }
