@@ -7,30 +7,28 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
     <script type="text/javascript" src="../js/listemp.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
 </head>
 
-<body id="total">
-    <h1 align="center">Vizualização de todos os Empréstimos</h1>
+<body id="total" class="body">
+    <h1 align="center" class="titulo">Vizualização de todos os Empréstimos</h1>
     <div id="conteudo">
-        <table align="center" border="0">
+        <table align="center" border="0" class="tabela">
             <thead>
                 <tr>
-                    <th>Acadêmico</th>
-                    <th>Equipamento</th>
-                    <th>Tipo</th>
-                    <th>Data de empréstimo</th>
-                    <th>Data de devolução</th>
-                    <th>Status</th>
+                    <th class="infomativo">Acadêmico</th>
+                    <th class="infomativo">Equipamento</th>
+                    <th class="infomativo">Tipo</th>
+                    <th class="infomativo">Data de empréstimo</th>
+                    <th class="infomativo">Data de devolução</th>
+                    <th class="infomativo">Status</th>
                 </tr>
             </thead>
             <tbody id="lista">
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="6"><a href="niaa.html"><button>Voltar</button></a></td>
-                </tr>
-            </tfoot>
         </table>
+        <div style="height: 50px"></div>
+        <a href="niaa.html"><button class="sair">Voltar</button></a>
     </div>
 </body>
 

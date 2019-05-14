@@ -1,0 +1,9 @@
+.tabelaEmprestimo{
+
+    width: 40%;
+    height: 20%
+    margin: auto;
+    border-style: none;
+    border-collapse: collapse;
+    align-items: center;
+}

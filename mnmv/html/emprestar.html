@@ -9,17 +9,19 @@
     <script type="text/javascript" src="../js/emprestar.js"></script>
     <script type="text/javascript" src="../js/add.js"></script>
     <script type="text/javascript" src="../js/insert.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/emprestar.css">
+
 </head>
 
-<body id="i_0">
-    <h2 align="center" border="0">Equipamentos disponíveis</h2>
-    <table align="center" border="0" id="inserir">
+<body id="i_0" class="body">
+    <table align="center" border="0" id="inserir" class="tabelaEmprestimo">
     </table>
-    <table align="center" border="0">
+    <table align="center" border="0" class="tabelaEmprestimo">
         <tbody id="body">
             <tr>
                 <td>Tipo</td>
-                <td><select class="tipo" name="0">
+                <td><select name="0">
                         <option></option>
                         <option value="N">Notebook</option>
                         <option value="F">Fonte</option>
@@ -35,14 +37,15 @@
         </tbody>
         <tfoot>
             <tr>
-                <td><button id="add">Adicionar equipamento</button></td>
-                <td><button id="enviar">Enviar</button></td>
+                <td><button id="add" class="botoes">Adicionar equipamento</button></td>
+                <td><button id="enviar" class="botoes">Enviar</button></td>
             </tr>
             <tr>
-                <td colspan="2"><a href="menu.html"><button>Voltar</button></a></td>
+                <td colspan="2"><a href="menu.html"><button  class="sair">Voltar</button></a></td>
             </tr>
         </tfoot>
     </table>
 </body>
 
 </html>
+    <h2 align="center" border="0" class="titulo">Equipamentos disponíveis</h2>
