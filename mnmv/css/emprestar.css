@@ -7,3 +7,22 @@
     border-collapse: collapse;
     align-items: center;
 }
+
+
+.botoesSele{
+border: none;
+font-size: 18px;
+background-color: #8591ab;
+color:white;
+border-color: white;
+border-width: 3px;
+}
+
+.botoesSele:hover{
+background-color: black;
+color: white;
+}
+
+.indicadores{
+	font-size: 22px;
+}
