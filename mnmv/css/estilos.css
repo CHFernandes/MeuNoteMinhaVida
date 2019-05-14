@@ -80,6 +80,8 @@ border: none;
 font-size: 22px;
 margin-left: 20%;
 background-color: ##92a8d1;
+border-color: white;
+border-width: 3px;
 }
 
 .titulo{
@@ -92,4 +94,13 @@ border: none;
 font-size: 18px;
 margin-left: 80%;
 background-color: ##92a8d1;
+}
+
+.sair:hover{
+    color: #8080ff;
+    font-size: 20px;
+}
+
+.botoes:hover{
+    color: #8080ff;
 }
