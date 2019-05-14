@@ -92,8 +92,14 @@ input {
   padding: 0;
 }
 
-input[type='submit'] {
+button[type='submit'] {
   cursor: pointer;
+  appearance: none;
+  border: none;
+  font: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0;
 }
 
 .form input[type='matricula'],
@@ -160,7 +166,7 @@ input[type='submit'] {
   border-top: 0;
 }
 
-.login input[type='submit'] {
+.login button[type='submit'] {
   background-color: black;
   border-radius: var(--loginInputBorderRadius);
   color: #fff;
@@ -170,8 +176,8 @@ input[type='submit'] {
   transition: background-color 0.3s;
 }
 
-.login input[type='submit']:focus,
-.login input[type='submit']:hover {
+.login button[type='submit']:focus,
+.login button[type='submit']:hover {
   opacity: 0.7;
 }
 
