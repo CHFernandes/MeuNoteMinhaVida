@@ -85,8 +85,8 @@ border-width: 3px;
 }
 
 .titulo{
-    font: green;
     background-color: white;
+    font-size: 36px;
 }
 
 .sair{
@@ -104,3 +104,15 @@ background-color: ##92a8d1;
 .botoes:hover{
     color: #8080ff;
 }
+
+.infomativo{
+    size:26px;
+    background-color: #E6E6FA;
+}
+
+.tabela{
+    width: 80%;
+    margin: auto;
+    border-style: none;
+    border-collapse: collapse;
+      }
