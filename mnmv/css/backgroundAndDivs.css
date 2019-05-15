@@ -9,7 +9,6 @@
     padding-bottom: 1%;
     color: white;
     border-bottom-right-radius: 1.2em;
-    border-top-right-radius: 1.2em;
 }
 body{
     margin-top: 0%;
@@ -80,6 +79,7 @@ border-top-right-radius: 0.8em;
     border-bottom-right-radius: 0.8em;
     border-top-right-radius: 0.8em;
     border-style: solid;
+    font-size: 15px;
 }
 .arena{
 margin-top: 0%;
