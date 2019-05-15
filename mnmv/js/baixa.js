@@ -4,7 +4,7 @@ $(document).ready(function () {
             type: "POST",
             url: "../php/baixa.php",
            data: {
-                num: $("#num").val(),
+                num: $(".equip").val(),
                 tipo: $(".tipo").val()
             },
             success: function (retorno) {
