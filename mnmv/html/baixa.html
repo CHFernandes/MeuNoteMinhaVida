@@ -1,24 +1,51 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Devolução</title>
+    <title>Devolução De Equipamento</title>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
     <script type="text/javascript" src="../js/baixa.js"></script>
     <script type="text/javascript" src="../js/add.js"></script>
     <script type="text/javascript" src="../js/insert.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
-    <link rel="stylesheet" type="text/css" href="../css/emprestar.css">
+    <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
 </head>
 
-<body id="i_1" class="body">
-    <h1 class="titulo">Devolução de equipamento</h1>
-    <table align="center" border="0" class="tabelaEmprestimo">
+    <body>
+        
+        <div class="barratopo"><h1>Devolução De Equipamento</h1></div>
+        
+        <div class="barramenu"> 
+            <table>
+            <tr>
+                <td><a href="niaa.html"><button class="sair">Voltar</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="vequip.html"><button>Vizualizar Equipamentos</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="vequipemp.html"><button>Vizualizar Equipamentos Emprestados</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="emptotal.html"><button >Vizualizar Empréstimos Totais</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="empaberto.html"><button>Vizualizar Empréstimos Abertos</button></a></td>
+            </tr>
+             <tr>
+                <td><a href="cadastro.html"><button>Cadastrar Novos Equipamentos</button></a></td>
+            </tr>
+             <tr>
+                <td><a href="baixa.html"><button>Dar baixa na devolução</button></a></td>
+            </tr>
+            </table>
+        </div>
+        
+        <div class="arena" id="i_1">
+            <table align="center" border="0">
         <tbody id="body">
             <tr>
-                <td class="indicadores" >Tipo</td>
+                <td>Tipo</td>
                 <td><select class="tipo" name="0">
                         <option></option>
                         <option value="N">Notebook</option>
@@ -29,21 +56,19 @@
                 </td>
             </tr>
             <tr>
-                <td class="indicadores">Equipamento</td>
+                <td>Equipamento</td>
                 <td><select class="equip" name="0"></select></td>
             </tr>
         </tbody>
-        <tfoot class="tabelaEmprestimo">
+        <tfoot>
             <tr>
-                <td colspan="2"><button id="add" class="botoesSele">Adicionar equipamento</button></td>
+                <td colspan="2"><button id="add">Adicionar equipamento</button></td>
             </tr>
             <tr>
-                <td><button id="enviar" class="botoesSele">Enviar</button>
-                </td>
+                <td><button id="enviar">Enviar</button></td>
             </tr>
         </tfoot>
     </table>
-    <a href="niaa.html"><button>Voltar</button></a>
-</body>
-
+        </div>
+    </body>     
 </html>

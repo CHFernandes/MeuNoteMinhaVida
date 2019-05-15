@@ -1,32 +1,57 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Empréstimos</title>
+    <title>Vizualização Equipamentos</title>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
     <script type="text/javascript" src="../js/listequip.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
 </head>
-
-<body id="total" class="body">
-    <h1 align="center" class="titulo">Vizualização Equipamentos</h1>
-    <div id="conteudo">
-        <table align="center" border="0" class="tabela">
+        <body id="total">
+        
+        <div class="barratopo"><h1>Vizualização Equipamentos</h1></div>
+        
+        <div class="barramenu"> 
+            <table>
+            <tr>
+                <td><a href="niaa.html"><button class="sair">Voltar</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="vequip.html"><button>Vizualizar Equipamentos</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="vequipemp.html"><button>Vizualizar Equipamentos Emprestados</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="emptotal.html"><button >Vizualizar Empréstimos Totais</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="empaberto.html"><button>Vizualizar Empréstimos Abertos</button></a></td>
+            </tr>
+             <tr>
+                <td><a href="cadastro.html"><button>Cadastrar Novos Equipamentos</button></a></td>
+            </tr>
+             <tr>
+                <td><a href="baixa.html"><button>Dar baixa na devolução</button></a></td>
+            </tr>
+            </table>
+        </div>
+        
+        <div class="arena" id="conteudo"> 
+            <table align="center" border="0">
             <thead>
                 <tr>
-                    <th class="infomativo">Numeração</th>
-                    <th class="infomativo">Tipo</th>
-                    <th class="infomativo">Status</th>
+                    <th>Numeração</th>
+                    <th>Tipo</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody id="lista">
             </tbody>
         </table>
-        <div style="height: 50px"></div>
-        <a href="niaa.html" class="sair"><button>Voltar</button></a>
-    </div>
-</body>
-
+        </div>
+        <div class="barrainferior"> 
+        </div>
+    </body>     
 </html>

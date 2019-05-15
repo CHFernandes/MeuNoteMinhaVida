@@ -1,40 +1,64 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar</title>
+    <title>Cadastrar Equipamento</title>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
     <script type="text/javascript" src="../js/cadastrar.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
-    <link rel="stylesheet" type="text/css" href="../css/emprestar.css">
-
-
+    <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
+    <link rel="stylesheet" type="text/css" href="../css/ButtonAndInputs.css">
 </head>
 
-<body>
-    <h2 class="titulo">Cadastro de Equipamento</h2>
-    <table align="center" border="0" class="tabelaEmprestimo">
-        <tbody>
+    <body>
+        
+        <div class="barratopo"><h1>Cadastrar Equipamento</h1></div>
+        
+        <div class="barramenu"> 
+            <table>
             <tr>
-                <td>Numeração</td>
-                <td><input id="num" type="text" style="width: 40%"></td>
+                <td><a href="niaa.html"><button class="sair">Voltar</button></a></td>
             </tr>
             <tr>
-                <td>Tipo</td>
-                <td><input id="tipo" type="text" style="width: 40%"></td>
+                <td><a href="vequip.html"><button>Vizualizar Equipamentos</button></a></td>
             </tr>
-        </tbody>
-        <tfoot>
             <tr>
-                <td></td>
-                <td><button id="enviar" class="botoesSele" style="width: 40%">Enviar</button></td>
+                <td><a href="vequipemp.html"><button>Vizualizar Equipamentos Emprestados</button></a></td>
             </tr>
-        </tfoot>
-    </table>
-
-    <a href="niaa.html" class="sair"><button>Voltar</button></a>
-</body>
-
+            <tr>
+                <td><a href="emptotal.html"><button >Vizualizar Empréstimos Totais</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="empaberto.html"><button>Vizualizar Empréstimos Abertos</button></a></td>
+            </tr>
+             <tr>
+                <td><a href="cadastro.html"><button>Cadastrar Novos Equipamentos</button></a></td>
+            </tr>
+             <tr>
+                <td><a href="baixa.html"><button>Dar baixa na devolução</button></a></td>
+            </tr>
+            </table>
+        </div>
+        
+        <div class="arena"> 
+            <table align="center" border="0">
+                <tbody>
+                    <tr>
+                        <td><input id="num" type="text" class="entrada1" placeholder="Numeração"></td>
+                    </tr>
+                    <tr>
+                        <td><input id="tipo" type="text" class="entrada2" placeholder="Tipo"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><button id="enviar" class="enviar">Enviar</button></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="barrainferior"> 
+        </div>
+    </body>     
 </html>

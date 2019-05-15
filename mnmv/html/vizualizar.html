@@ -1,36 +1,54 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Empréstimos</title>
+    <title>Vizualização Empréstimos</title>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
     <script type="text/javascript" src="../js/listar.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
 
 </head>
 
-<body class="body">
-    <h1 align="center" class="titulo">Vizualização Empréstimos</h1>
-    <div id="conteudo">
-        <table align="center" border="0" class="tabela">
+    <body class="body">
+        
+        <div class="barratopo"><h1>Vizualização Empréstimos</h1></div>
+        
+        <div class="barramenu" id="conteudo"> 
+            <table>
+            <tr>
+                <td><a href="menu.html"><button class="sair">Voltar</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="emprestar.html"><button class="botoes">Emprestar Equipamentos</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="vizualizar.html"><button class="botoes">Vizualizar Empréstimos</button></a></td>
+            </tr>
+            </table>
+        </div>
+        
+        <div class="arena" id="conteudo">
+    <table align="center" border="0">
             <thead>
                 <tr>
-                    <th class="infomativo">Numeração</th>
-                    <th class="infomativo">Tipo</th>
-                    <th class="infomativo">Data De Empréstimo</th>
-                    <th class="infomativo">Data Esperada de Devolução</th>
-                    <th class="infomativo">Status</th>
+                    <th>Numeração</th>
+                    <th>Tipo</th>
+                    <th>Data De Empréstimo</th>
+                    <th>Data Esperada de Devolução</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody id="lista">
             </tbody>
+            <tfoot>
+            <tr>
+            </tr>
+            </tfoot>
         </table>
-    </div>
-                    <div style="height: 400px;"></div>
-                    <a href="menu.html"><button class="sair" style="size: 16px;">Voltar</button></a></td>
-
-</body>
-
+        </div>
+        
+        <div class="barrainferior"> 
+        </div>
+    </body>     
 </html>
