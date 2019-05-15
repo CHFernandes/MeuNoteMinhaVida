@@ -9,13 +9,16 @@
     <script type="text/javascript" src="../js/baixa.js"></script>
     <script type="text/javascript" src="../js/add.js"></script>
     <script type="text/javascript" src="../js/insert.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/emprestar.css">
 </head>
 
-<body id="i_1">
-    <table align="center" border="0">
+<body id="i_1" class="body">
+    <h1 class="titulo">Devolução de equipamento</h1>
+    <table align="center" border="0" class="tabelaEmprestimo">
         <tbody id="body">
             <tr>
-                <td>Tipo</td>
+                <td class="indicadores" >Tipo</td>
                 <td><select class="tipo" name="0">
                         <option></option>
                         <option value="N">Notebook</option>
@@ -26,20 +29,21 @@
                 </td>
             </tr>
             <tr>
-                <td>Equipamento</td>
+                <td class="indicadores">Equipamento</td>
                 <td><select class="equip" name="0"></select></td>
             </tr>
         </tbody>
-        <tfoot>
+        <tfoot class="tabelaEmprestimo">
             <tr>
-                <td colspan="2"><button id="add">Adicionar equipamento</button></td>
+                <td colspan="2"><button id="add" class="botoesSele">Adicionar equipamento</button></td>
             </tr>
             <tr>
-                <td><button id="enviar">Enviar</button></td>
-                <td><a href="niaa.html"><button>Voltar</button></a></td>
+                <td><button id="enviar" class="botoesSele">Enviar</button>
+                </td>
             </tr>
         </tfoot>
     </table>
+    <a href="niaa.html"><button>Voltar</button></a>
 </body>
 
 </html>

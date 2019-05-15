@@ -26,3 +26,13 @@ color: white;
 .indicadores{
 	font-size: 22px;
 }
+.sairEmpr{
+border: none;
+font-size: 16px;
+background-color: ##92a8d1;
+}
+
+.sairEmpr:hover{
+    color: #B22222;
+    font-size: 20px;
+}
