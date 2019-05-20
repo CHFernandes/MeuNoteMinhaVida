@@ -1,6 +1,18 @@
 $(document).ready(function () {
     $("#enviar").click(function () {
         
+        var blocos = new Array();
+        
+        $('.bloco').each(function(){
+	       blocos.push($(this).val());
+        });
+        
+        var sala = new Array();
+        
+        $('.sala').each(function(){
+	       sala.push($(this).val());
+        });
+        
         var equip = new Array();
 
         $('.equip').each(function(){
@@ -17,10 +29,14 @@ $(document).ready(function () {
             type: "POST",
             url: "../php/emprestar.php",
             data: {
+                bloco: blocos,
+                sala: sala,
                 equipamento: equip,
                 tipo: tipos
             },
             success: function (retorno) {
+                
+                alert(retorno);
                 
                 if (retorno == '1') {
                     alert("Empréstimo realizado com sucesso");

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: 20-Maio-2019 às 14:56
+-- Generation Time: 21-Maio-2019 às 00:15
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -32,18 +32,20 @@ CREATE TABLE `academico` (
   `Idacademico` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `matricula` int(11) NOT NULL,
-  `senha` varchar(255) NOT NULL
+  `senha` varchar(255) NOT NULL,
+  `tipo` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `academico`
 --
 
-INSERT INTO `academico` (`Idacademico`, `nome`, `matricula`, `senha`) VALUES
-(1, 'Thiago José Saquette Fagundes', 1, 'naoseimeunome'),
-(2, 'Diogo Caron Feld', 5, 'diogo.feld'),
-(3, 'Carlos Henrique Fernandes', 7, 'eitapega'),
-(4, 'NIAA', 127, 'admin');
+INSERT INTO `academico` (`Idacademico`, `nome`, `matricula`, `senha`, `tipo`) VALUES
+(1, 'Thiago José Saquette Fagundes', 1, 'naoseimeunome', '1'),
+(2, 'Diogo Caron Feld', 5, 'diogo.feld', '1'),
+(3, 'Carlos Henrique Fernandes', 7, 'eitapega', '1'),
+(4, 'NIAA', 127, 'admin', '0'),
+(5, 'Kelly Betio', 10, 'kelly', '2');
 
 -- --------------------------------------------------------
 
@@ -55,6 +57,7 @@ CREATE TABLE `emprestimo` (
   `idemprestimo` int(11) NOT NULL,
   `idacademico` int(11) NOT NULL,
   `idequipamento` int(11) NOT NULL,
+  `idsala` int(11) NOT NULL,
   `datainicio` datetime NOT NULL,
   `datafim` datetime NOT NULL,
   `status` tinyint(1) NOT NULL
@@ -64,10 +67,10 @@ CREATE TABLE `emprestimo` (
 -- Extraindo dados da tabela `emprestimo`
 --
 
-INSERT INTO `emprestimo` (`idemprestimo`, `idacademico`, `idequipamento`, `datainicio`, `datafim`, `status`) VALUES
-(28, 3, 13, '2019-05-20 09:30:04', '2019-05-20 09:50:10', 0),
-(29, 3, 18, '2019-05-20 09:51:25', '2019-05-20 10:41:25', 1),
-(30, 3, 13, '2019-05-20 09:51:25', '2019-05-20 10:41:25', 1);
+INSERT INTO `emprestimo` (`idemprestimo`, `idacademico`, `idequipamento`, `idsala`, `datainicio`, `datafim`, `status`) VALUES
+(33, 3, 14, 1, '2019-05-20 17:24:57', '2019-05-20 17:25:42', 0),
+(34, 3, 20, 1, '2019-05-20 17:24:57', '2019-05-20 17:26:09', 0),
+(37, 3, 14, 1, '2019-05-20 18:05:14', '2019-05-20 18:55:14', 1);
 
 -- --------------------------------------------------------
 
@@ -89,11 +92,11 @@ CREATE TABLE `equipamento` (
 INSERT INTO `equipamento` (`idequipamento`, `numeracao`, `idtipo`, `status`) VALUES
 (12, 52, 1, 0),
 (13, 44, 1, 1),
-(14, 67, 1, 0),
-(15, 14, 2, 0),
+(14, 67, 1, 1),
+(15, 14, 2, 1),
 (16, 22, 2, 0),
 (17, 67, 2, 0),
-(18, 32, 3, 1),
+(18, 32, 3, 0),
 (19, 45, 3, 0),
 (20, 77, 4, 0),
 (23, 33, 2, 0);
@@ -114,7 +117,8 @@ ALTER TABLE `academico`
 ALTER TABLE `emprestimo`
   ADD PRIMARY KEY (`idemprestimo`),
   ADD KEY `FK_idacademico` (`idacademico`),
-  ADD KEY `FK_idequipamento` (`idequipamento`);
+  ADD KEY `FK_idequipamento` (`idequipamento`),
+  ADD KEY `FK_idsala` (`idsala`);
 
 --
 -- Indexes for table `equipamento`
@@ -131,13 +135,13 @@ ALTER TABLE `equipamento`
 -- AUTO_INCREMENT for table `academico`
 --
 ALTER TABLE `academico`
-  MODIFY `Idacademico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Idacademico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  MODIFY `idemprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `idemprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `equipamento`
@@ -154,7 +158,8 @@ ALTER TABLE `equipamento`
 --
 ALTER TABLE `emprestimo`
   ADD CONSTRAINT `FK_idacademico` FOREIGN KEY (`idacademico`) REFERENCES `academico` (`Idacademico`),
-  ADD CONSTRAINT `FK_idequipamento` FOREIGN KEY (`idequipamento`) REFERENCES `equipamento` (`idequipamento`);
+  ADD CONSTRAINT `FK_idequipamento` FOREIGN KEY (`idequipamento`) REFERENCES `equipamento` (`idequipamento`),
+  ADD CONSTRAINT `FK_idsala` FOREIGN KEY (`idsala`) REFERENCES `sala` (`idsala`);
 
 --
 -- Limitadores para a tabela `equipamento`

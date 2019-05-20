@@ -23,6 +23,18 @@ if(mysqli_num_rows($result) > 0){
         $query1 = mysqli_query($mysqli,$sql1);
         $row1 = mysqli_fetch_assoc($query1);
         $descricao = $row1['Descricao'];
+        $idsala = $row['idsala'];
+        $sql3 = "SELECT * FROM sala WHERE idsala = '$idsala' ";
+        $query3 = mysqli_query($mysqli,$sql3);
+        $row3 = mysqli_fetch_assoc($query3);
+        $sala = $row3['sala'];
+        $retorno[$i]['sala'] = $sala;
+        $idbloco = $row3['idbloco'];
+        $sql4 = "SELECT * FROM bloco WHERE idbloco = '$idbloco'";
+        $query4 = mysqli_query($mysqli,$sql4);
+        $row4 = mysqli_fetch_assoc($query4);
+        $bloco = $row4['numero'];
+        $retorno[$i]['bloco'] = $bloco;
         $retorno[$i]['descricao'] = $descricao;
         $retorno[$i]['datainicio'] = $row['datainicio'];
         $retorno[$i]['datafim'] =  $row['datafim'];
