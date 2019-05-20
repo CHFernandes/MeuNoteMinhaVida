@@ -13,7 +13,12 @@ $i = 0;
 if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_assoc($result)){
         $retorno[$i]['numeracao'] = $row['numeracao'];
-        $retorno[$i]['tipo'] = $row['tipo'];
+        $idtipo = $row['idtipo'];
+        $sql1 = "SELECT * FROM tipo WHERE idtipo = '$idtipo'";
+        $query1 = mysqli_query($mysqli,$sql1);
+        $row1 = mysqli_fetch_assoc($query1);
+        $retorno[$i]['tipo'] = $row1['Sigla'];
+        $retorno[$i]['descricao'] = $row1['Descricao'];
         $retorno[$i]['status'] = $row['status'];
         $i = $i + 1;
     }

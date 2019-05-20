@@ -17,6 +17,7 @@ $(document).ready(function () {
                 datatype: "json",
                 url: "../php/equipamento.php",
                 success: function (lista) {
+                    
 
                     var stringster = JSON.parse(lista);
 

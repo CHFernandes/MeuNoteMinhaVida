@@ -8,7 +8,7 @@
     $tipo = $_POST["tipo"];
 
 for($i = 0; $i < count($numeracao); $i++){
-    $sql = "SELECT * FROM equipamento WHERE numeracao = '$numeracao[$i]' AND tipo = '$tipo[$i]' AND status = '0' ";
+    $sql = "SELECT * FROM equipamento WHERE numeracao = '$numeracao[$i]' AND idtipo = (SELECT idtipo FROM tipo WHERE Sigla = '$tipo[$i]') AND status = '0' ";
 
     $query = $mysqli->query($sql);
     

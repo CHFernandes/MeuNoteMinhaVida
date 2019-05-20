@@ -7,7 +7,12 @@ include('database.php');
 $num = $_POST['num'];
 $tipo = $_POST['tipo'];
 
-$sql = "SELECT * FROM equipamento WHERE numeracao = '$num' AND tipo = '$tipo' AND status = '1'";
+$sql1 = "SELECT * FROM tipo WHERE Sigla = '$tipo'";
+$query1 = mysqli_query($mysqli,$sql1);
+$row1 = mysqli_fetch_assoc($query1);
+$idtipo = $row1['idtipo'];
+
+$sql = "SELECT * FROM equipamento WHERE numeracao = '$num' AND idtipo = '$idtipo' AND status = '1'";
 
 $result = mysqli_query($mysqli, $sql);
 
