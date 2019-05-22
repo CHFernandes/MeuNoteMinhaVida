@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: 21-Maio-2019 às 00:15
+-- Generation Time: 22-Maio-2019 às 13:50
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -70,7 +70,11 @@ CREATE TABLE `emprestimo` (
 INSERT INTO `emprestimo` (`idemprestimo`, `idacademico`, `idequipamento`, `idsala`, `datainicio`, `datafim`, `status`) VALUES
 (33, 3, 14, 1, '2019-05-20 17:24:57', '2019-05-20 17:25:42', 0),
 (34, 3, 20, 1, '2019-05-20 17:24:57', '2019-05-20 17:26:09', 0),
-(37, 3, 14, 1, '2019-05-20 18:05:14', '2019-05-20 18:55:14', 1);
+(37, 3, 14, 1, '2019-05-20 18:05:14', '2019-05-20 18:55:14', 1),
+(38, 3, 12, 1, '2019-05-21 12:37:34', '2019-05-21 13:27:34', 1),
+(39, 3, 23, 1, '2019-05-21 12:37:34', '2019-05-21 13:27:34', 1),
+(40, 3, 17, 1, '2019-05-21 12:37:59', '2019-05-21 13:27:59', 1),
+(41, 3, 20, 1, '2019-05-21 12:38:00', '2019-05-21 13:28:00', 1);
 
 -- --------------------------------------------------------
 
@@ -90,16 +94,16 @@ CREATE TABLE `equipamento` (
 --
 
 INSERT INTO `equipamento` (`idequipamento`, `numeracao`, `idtipo`, `status`) VALUES
-(12, 52, 1, 0),
+(12, 52, 1, 1),
 (13, 44, 1, 1),
 (14, 67, 1, 1),
 (15, 14, 2, 1),
 (16, 22, 2, 0),
-(17, 67, 2, 0),
+(17, 67, 2, 1),
 (18, 32, 3, 0),
 (19, 45, 3, 0),
-(20, 77, 4, 0),
-(23, 33, 2, 0);
+(20, 77, 4, 1),
+(23, 33, 2, 1);
 
 --
 -- Indexes for dumped tables
@@ -141,7 +145,7 @@ ALTER TABLE `academico`
 -- AUTO_INCREMENT for table `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  MODIFY `idemprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idemprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `equipamento`
