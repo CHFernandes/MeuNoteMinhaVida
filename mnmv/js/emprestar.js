@@ -31,8 +31,6 @@ $(document).ready(function () {
             },
             success: function (retorno) {
                 
-                alert(retorno);
-                
                 if (retorno == '1') {
                     alert("Empréstimo realizado com sucesso");
                     window.location = 'menu.html';
