@@ -11,6 +11,8 @@
     $aula = $_POST["aulas"];
     $inicio = $_POST["inicio"];
 
+/*echo ($inicio);*/
+
 /*
 
 for($i = 0; $i < count($numeracao); $i++){

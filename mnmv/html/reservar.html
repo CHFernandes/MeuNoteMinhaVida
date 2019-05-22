@@ -8,12 +8,15 @@
     <script type="text/javascript" src="../js/add.js"></script>
     <script type="text/javascript" src="../js/insert.js"></script>
     <script type="text/javascript" src="../js/reservar.js"></script>
+    <script type="text/javascript" src="../js/ap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
+    <link rel="stylesheet" type="text/css" href="../css/ButtonAndInputs.css">
 </head>
 <body id="i_0">
     <div class="barratopo"><h1>Equipamentos Disponíveis</h1></div>
         
         <div class="barramenu"> 
-            <table>
+            <table class="esq">
             <tr>
                 <td><a href="menu.html"><button class="sair">Voltar</button></a></td>
             </tr>
@@ -33,11 +36,11 @@
         <tbody id="body">
             <tr>
                 <td>Horário da reserva</td>
-                <td><input type="datetime" id="inicio"></td>
+                <td><input type="datetime-local" id="inicio"></td>
             </tr>
             <tr>
                 <td>Aulas</td>
-                <td><select class="Aulas">
+                <td><select class="aulas">
                         <option></option>
                         <option value="1">1</option>
                         <option value="2">2</option>
