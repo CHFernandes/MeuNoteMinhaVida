@@ -1,20 +1,16 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>Emprestar</title>
+    <title>Reservar</title>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
-    <script type="text/javascript" src="../js/emprestar.js"></script>
     <script type="text/javascript" src="../js/add.js"></script>
     <script type="text/javascript" src="../js/insert.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
-    <link rel="stylesheet" type="text/css" href="../css/ButtonAndInputs.css">
+    <script type="text/javascript" src="../js/reservar.js"></script>
 </head>
-
-    <body id="i_0">
-        
-        <div class="barratopo"><h1>Equipamentos Disponíveis</h1></div>
+<body id="i_0">
+    <div class="barratopo"><h1>Equipamentos Disponíveis</h1></div>
         
         <div class="barramenu"> 
             <table>
@@ -35,6 +31,10 @@
     </table>
     <table align="center" border="0">
         <tbody id="body">
+            <tr>
+                <td>Horário da reserva</td>
+                <td><input type="datetime" id="inicio"></td>
+            </tr>
             <tr>
                 <td>Aulas</td>
                 <td><select class="Aulas">
@@ -81,5 +81,5 @@
         
         <div class="barrainferior"> 
         </div>
-    </body>     
+</body>
 </html>

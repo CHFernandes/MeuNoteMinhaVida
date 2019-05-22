@@ -8,10 +8,11 @@
     $tipo = $_POST["tipo"];
     $bloco = $_POST["bloco"];
     $sala = $_POST["sala"];
+    $aula = $_POST["aulas"];
 
 for($i = 0; $i < count($numeracao); $i++){
     $sql = "SELECT * FROM equipamento WHERE numeracao = '$numeracao[$i]' AND idtipo = (SELECT idtipo FROM tipo WHERE Sigla = '$tipo[$i]') AND status = '0' ";
-    $sql0 = "SELECT * FROM sala WHERE sala = '$sala[$i]' AND idbloco = (SELECT idbloco FROM bloco WHERE numero = '$bloco[$i]')";
+    $sql0 = "SELECT * FROM sala WHERE sala = '$sala' AND idbloco = (SELECT idbloco FROM bloco WHERE numero = '$bloco')";
     $query = $mysqli->query($sql);
     $query0 = mysqli_query($mysqli,$sql0);
     
@@ -26,7 +27,8 @@ for($i = 0; $i < count($numeracao); $i++){
         $datain->settimezone($fuso);
         $dataout = new datetime();
         $dataout->setTimezone($fuso);
-        $dataout->modify('+50 minutes');
+        $min = $aula * 50;
+        $dataout->modify('+'.$min.'minutes');
         $datainicio = $datain->format('Y-m-d H:i:s');
         $datafim = $dataout->format('Y-m-d H:i:s');
         $row0 = mysqli_fetch_assoc($query0);

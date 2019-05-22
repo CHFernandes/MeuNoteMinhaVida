@@ -1,17 +1,11 @@
 $(document).ready(function () {
     $("#enviar").click(function () {
         
-        var blocos = new Array();
+        var bloco = $('.bloco').val();
         
-        $('.bloco').each(function(){
-	       blocos.push($(this).val());
-        });
+        var sala = $('.sala').val();
         
-        var sala = new Array();
-        
-        $('.sala').each(function(){
-	       sala.push($(this).val());
-        });
+        var aulas = $('.aulas').val();
         
         var equip = new Array();
 
@@ -29,14 +23,13 @@ $(document).ready(function () {
             type: "POST",
             url: "../php/emprestar.php",
             data: {
-                bloco: blocos,
+                aulas: aulas,
+                bloco: bloco,
                 sala: sala,
                 equipamento: equip,
                 tipo: tipos
             },
             success: function (retorno) {
-                
-                alert(retorno);
                 
                 if (retorno == '1') {
                     alert("Empréstimo realizado com sucesso");
