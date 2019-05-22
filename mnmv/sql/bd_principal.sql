@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: 22-Maio-2019 às 13:50
+-- Generation Time: 22-Maio-2019 às 13:56
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -46,6 +46,33 @@ INSERT INTO `academico` (`Idacademico`, `nome`, `matricula`, `senha`, `tipo`) VA
 (3, 'Carlos Henrique Fernandes', 7, 'eitapega', '1'),
 (4, 'NIAA', 127, 'admin', '0'),
 (5, 'Kelly Betio', 10, 'kelly', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `bloco`
+--
+
+CREATE TABLE `bloco` (
+  `idbloco` int(11) NOT NULL,
+  `numero` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `bloco`
+--
+
+INSERT INTO `bloco` (`idbloco`, `numero`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
 
 -- --------------------------------------------------------
 
@@ -105,6 +132,48 @@ INSERT INTO `equipamento` (`idequipamento`, `numeracao`, `idtipo`, `status`) VAL
 (20, 77, 4, 1),
 (23, 33, 2, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `sala`
+--
+
+CREATE TABLE `sala` (
+  `idsala` int(11) NOT NULL,
+  `sala` varchar(100) NOT NULL,
+  `idbloco` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `sala`
+--
+
+INSERT INTO `sala` (`idsala`, `sala`, `idbloco`) VALUES
+(1, 'Jacaranda 3', 2),
+(2, 'Araca 3', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo`
+--
+
+CREATE TABLE `tipo` (
+  `idtipo` int(11) NOT NULL,
+  `Descricao` varchar(255) NOT NULL,
+  `Sigla` char(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tipo`
+--
+
+INSERT INTO `tipo` (`idtipo`, `Descricao`, `Sigla`) VALUES
+(1, 'Notebook', 'N'),
+(2, 'Fonte', 'F'),
+(3, 'Torre', 'T'),
+(4, 'Carrinho', 'C');
+
 --
 -- Indexes for dumped tables
 --
@@ -114,6 +183,12 @@ INSERT INTO `equipamento` (`idequipamento`, `numeracao`, `idtipo`, `status`) VAL
 --
 ALTER TABLE `academico`
   ADD PRIMARY KEY (`Idacademico`);
+
+--
+-- Indexes for table `bloco`
+--
+ALTER TABLE `bloco`
+  ADD PRIMARY KEY (`idbloco`);
 
 --
 -- Indexes for table `emprestimo`
@@ -132,6 +207,19 @@ ALTER TABLE `equipamento`
   ADD KEY `idtipo` (`idtipo`);
 
 --
+-- Indexes for table `sala`
+--
+ALTER TABLE `sala`
+  ADD PRIMARY KEY (`idsala`),
+  ADD KEY `idbloco` (`idbloco`);
+
+--
+-- Indexes for table `tipo`
+--
+ALTER TABLE `tipo`
+  ADD PRIMARY KEY (`idtipo`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -140,6 +228,12 @@ ALTER TABLE `equipamento`
 --
 ALTER TABLE `academico`
   MODIFY `Idacademico` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `bloco`
+--
+ALTER TABLE `bloco`
+  MODIFY `idbloco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `emprestimo`
@@ -152,6 +246,18 @@ ALTER TABLE `emprestimo`
 --
 ALTER TABLE `equipamento`
   MODIFY `idequipamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `sala`
+--
+ALTER TABLE `sala`
+  MODIFY `idsala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tipo`
+--
+ALTER TABLE `tipo`
+  MODIFY `idtipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -170,6 +276,12 @@ ALTER TABLE `emprestimo`
 --
 ALTER TABLE `equipamento`
   ADD CONSTRAINT `idtipo` FOREIGN KEY (`idtipo`) REFERENCES `tipo` (`idtipo`);
+
+--
+-- Limitadores para a tabela `sala`
+--
+ALTER TABLE `sala`
+  ADD CONSTRAINT `idbloco` FOREIGN KEY (`idbloco`) REFERENCES `bloco` (`idbloco`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
