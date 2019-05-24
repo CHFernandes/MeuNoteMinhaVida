@@ -11,9 +11,8 @@
     $aula = $_POST["aulas"];
     $inicio = $_POST["inicio"];
 
-/*echo ($inicio);*/
+echo ($inicio);
 
-/*
 
 for($i = 0; $i < count($numeracao); $i++){
     $sql = "SELECT * FROM equipamento WHERE numeracao = '$numeracao[$i]' AND idtipo = (SELECT idtipo FROM tipo WHERE Sigla = '$tipo[$i]') AND status = '0' ";
@@ -28,10 +27,11 @@ for($i = 0; $i < count($numeracao); $i++){
         $query2 = mysqli_query($mysqli,$sql2);
         $user = $_SESSION['id'];
         $fuso = new datetimezone('America/Sao_Paulo');
-        $datain = new datetime();
-        $datain->settimezone($fuso);
-        $dataout = new datetime();
-        $dataout->setTimezone($fuso);
+        //$datain = new datetime();
+        $datain = $inicio;
+        //$datain->settimezone($fuso);
+        $dataout = $datain;
+        //$dataout->setTimezone($fuso);
         $min = $aula * 50;
         $dataout->modify('+'.$min.'minutes');
         $datainicio = $datain->format('Y-m-d H:i:s');
@@ -47,5 +47,4 @@ for($i = 0; $i < count($numeracao); $i++){
 }
 
 echo $teste;
-*/
 ?>
