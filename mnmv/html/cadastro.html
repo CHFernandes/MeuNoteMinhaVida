@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Equipamento</title>
@@ -8,6 +7,7 @@
     <script type="text/javascript" src="../js/cadastrar.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
     <link rel="stylesheet" type="text/css" href="../css/ButtonAndInputs.css">
+    <script type="text/javascript" src="../js/patterns.js"></script>
 </head>
 
     <body>
@@ -44,13 +44,12 @@
             <table align="center" border="0">
                 <tbody>
                     <tr>
-                        <td><input id="num" type="text" class="entrada1" placeholder="Numeração" pattern="^(0|[1-9][0-9]*)">
+                        <td><input id="num" type="text" required="^(0|[1-9][0-9]*)" class="entrada1" placeholder="Numeração">
                         </td>
-                    </tr>
+                        </tr>
                     <tr>
                         <td><!--<input id="tipo" type="text" class="entrada2" placeholder="Tipo">-->
                             <select id="tipo" name="0">
-                                <option></option>
                                 <option value="N">Notebook</option>
                                 <option value="F">Fonte</option>
                                 <option value="T">Torre</option>
