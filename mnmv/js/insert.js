@@ -76,5 +76,57 @@ $(document).ready(function () {
                 }
             });
         });
+        
+        $(body).on('change', '.bloco', function () {
+            var bloco = new Array();
+
+            $('.bloco').each(function () {
+                bloco.push($(this).val());
+            });
+
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                url: "../php/bloco.php",
+                success: function (lista) {
+
+                    var stringster = JSON.parse(lista);
+
+                    $(".bloco").html("");
+                    for (var i = stringster.length - 1; i >= 0; i--) {
+                            var o = 0;
+                            while (o < sala.length) {
+                                if (stringster[i].idbloco == bloco[o]) {
+                                    $(".bloco[name = " + sala[o] + "]").append(
+                                        "<option>" + stringster[i].nome + "</option>");
+                                }
+                                o = o + 1;
+                            }
+                    }
+                }
+            });
+        });
     }
+    
+    var bloco = new Array();
+            $('.bloco').each(function () {
+                bloco.push($(this).val());
+            });
+
+            $.ajax({
+                type: "GET",
+                datatype: "json",
+                url: "../php/sala.php",
+                success: function (lista) {
+
+                    var stringster = JSON.parse(lista);
+
+                    $(".bloco").html("");
+                    for (var i = stringster.length - 1; i >= 0; i--) {
+                                    $(".bloco[name = " + sala[o] + "]").append(
+                                        "<option>" + stringster[i].nome + "</option>");
+                    }
+                }
+        });
+    
 });
