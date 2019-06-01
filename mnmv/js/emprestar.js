@@ -35,7 +35,7 @@ $(document).ready(function () {
                     alert("Empréstimo realizado com sucesso");
                     window.location = 'menu.html';
                 } else {
-                    alert("Índice de notebook inexistente");
+                    alert("Índice de equipamento inexistente");
                 }
             }
         });
