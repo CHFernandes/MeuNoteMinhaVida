@@ -6,7 +6,7 @@ include('database.php');
 
 $sql = "SELECT * FROM bloco";
 
-$result = mysqli_query($mysqli) or die($mysql->error);
+$result = mysqli_query($mysqli,$sql) or die($mysql->error);
 
 $i = 0;
 

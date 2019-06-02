@@ -1,6 +1,6 @@
 $(document).ready(function () {
     if ($("body").is("#i_1")) {
-        $(body).on('change', '.tipo', function () {
+        $("body").on('change', '.tipo', function () {
             var tipo = new Array();
             var name = new Array();
 
@@ -40,7 +40,20 @@ $(document).ready(function () {
     }
 
     if ($("body").is("#i_0")) {
-        $(body).on('change', '.tipo', function () {
+        $.ajax({
+            type: "GET",
+            datatype:"json",
+            url: "../php/bloco.php",
+            success: function(result){
+                var convertido = JSON.parse(result);
+                $(".bloco").html("");
+                $(".bloco").append("<option></option>");
+                for(var i = 0; i<convertido.length; i++){
+                    $(".bloco").append("<option>" + convertido[i].numero + "</option>");
+                }
+            }
+        });
+        $("body").on('change', '.tipo', function () {
             var tipo = new Array();
             var name = new Array();
 
@@ -76,57 +89,23 @@ $(document).ready(function () {
                 }
             });
         });
-        
-        $(body).on('change', '.bloco', function () {
-            var bloco = new Array();
-
-            $('.bloco').each(function () {
-                bloco.push($(this).val());
-            });
-
+        $("body").on('change', '.bloco', function(){
+            var bloco = $(".bloco").val();
             $.ajax({
                 type: "GET",
                 datatype: "json",
-                url: "../php/bloco.php",
-                success: function (lista) {
-
-                    var stringster = JSON.parse(lista);
-
-                    $(".bloco").html("");
-                    for (var i = stringster.length - 1; i >= 0; i--) {
-                            var o = 0;
-                            while (o < sala.length) {
-                                if (stringster[i].idbloco == bloco[o]) {
-                                    $(".bloco[name = " + sala[o] + "]").append(
-                                        "<option>" + stringster[i].nome + "</option>");
-                                }
-                                o = o + 1;
-                            }
+                url:"../php/sala.php",
+                success: function (lista){
+                    var listac = JSON.parse(lista);
+                    $(".sala").html("");
+                    $(".sala").append("<option></option>");
+                    for(var i = 0; i<listac.length; i++){
+                        if(listac[i].bloco == bloco){
+                            $(".sala").append("<option>"+ listac[i].sala+"</option>");
+                        }
                     }
                 }
             });
         });
     }
-    
-    var bloco = new Array();
-            $('.bloco').each(function () {
-                bloco.push($(this).val());
-            });
-
-            $.ajax({
-                type: "GET",
-                datatype: "json",
-                url: "../php/sala.php",
-                success: function (lista) {
-
-                    var stringster = JSON.parse(lista);
-
-                    $(".bloco").html("");
-                    for (var i = stringster.length - 1; i >= 0; i--) {
-                                    $(".bloco[name = " + sala[o] + "]").append(
-                                        "<option>" + stringster[i].nome + "</option>");
-                    }
-                }
-        });
-    
 });

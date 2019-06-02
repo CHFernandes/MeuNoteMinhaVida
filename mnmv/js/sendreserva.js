@@ -22,7 +22,6 @@ $(document).ready(function(){
                 fim: fim
             },
             success: function(retorno){
-                alert(retorno);
                 if (retorno == '1') {
                     alert("Reserva enviada com sucesso");
                     window.location = 'niaa.html';
