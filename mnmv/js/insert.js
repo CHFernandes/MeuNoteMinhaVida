@@ -54,16 +54,8 @@ $(document).ready(function () {
             }
         });
         $("body").on('change', '.tipo', function () {
-            var tipo = new Array();
-            var name = new Array();
-
-            $('.tipo').each(function () {
-                name.push($(this).attr('name'));
-            });
-
-            $('.tipo').each(function () {
-                tipo.push($(this).val());
-            });
+            var tipo = $(this).val();
+            var name = $(this).attr('name');
 
             $.ajax({
                 type: "GET",
@@ -73,13 +65,13 @@ $(document).ready(function () {
 
                     var stringster = JSON.parse(lista);
 
-                    $(".equip").html("");
+                    $(".equip[name = "+ name +"]").html("");
                     for (var i = stringster.length - 1; i >= 0; i--) {
                         if (stringster[i].status == '0') {
                             var o = 0;
                             while (o < name.length) {
-                                if (stringster[i].tipo == tipo[o]) {
-                                    $(".equip[name = " + name[o] + "]").append(
+                                if (stringster[i].tipo == tipo) {
+                                    $(".equip[name = " + name + "]").append(
                                         "<option>" + stringster[i].numeracao + "</option>");
                                 }
                                 o = o + 1;

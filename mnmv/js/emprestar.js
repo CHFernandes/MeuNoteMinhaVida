@@ -22,6 +22,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "../php/emprestar.php",
+            async: false,
             data: {
                 aulas: aulas,
                 bloco: bloco,
