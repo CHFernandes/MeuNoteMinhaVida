@@ -15,8 +15,20 @@ $(document).ready(function () {
         
         var tipos = new Array();
         
-        $('.tipo').each(function(){
-            tipos.push($(this).val());
+        $.ajax({
+            type: "GET",
+            url: "../php/ap.php",
+            async: false,
+            success: function (retorno) {
+                if (retorno == 1) {
+                    $('.tipo').each(function () {
+                        tipos.push($(this).val());
+                    });
+                } else{
+                    tipos.push("N");
+                    tipos.push("F");
+                }
+            }
         });
         
         $.ajax({

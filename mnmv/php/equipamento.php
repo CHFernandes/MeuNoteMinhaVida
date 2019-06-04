@@ -20,6 +20,11 @@ if(mysqli_num_rows($result) > 0){
         $retorno[$i]['tipo'] = $row1['Sigla'];
         $retorno[$i]['descricao'] = $row1['Descricao'];
         $retorno[$i]['status'] = $row['status'];
+        $idbloco = $row['idbloco'];
+        $sql2 = "SELECT * FROM bloco WHERE idbloco = '$idbloco'";
+        $query2 = mysqli_query($mysqli,$sql2);
+        $row2 = mysqli_fetch_assoc($query2);
+        $retorno[$i]['bloco'] = $row2['numero'];
         $i = $i + 1;
     }
 }

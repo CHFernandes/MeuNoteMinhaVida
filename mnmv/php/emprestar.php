@@ -11,7 +11,7 @@
     $aula = $_POST["aulas"];
 
 for($i = 0; $i < count($numeracao); $i++){
-    $sql = "SELECT * FROM equipamento WHERE numeracao = '$numeracao[$i]' AND idtipo = (SELECT idtipo FROM tipo WHERE Sigla = '$tipo[$i]') AND status = '0' ";
+    $sql = "SELECT * FROM equipamento WHERE numeracao = '$numeracao[$i]' AND idtipo = (SELECT idtipo FROM tipo WHERE Sigla = '$tipo[$i]') AND status = '0' AND idbloco = (SELECT idbloco FROM bloco WHERE numero = '$bloco')";
     $sql0 = "SELECT * FROM sala WHERE sala = '$sala' AND idbloco = (SELECT idbloco FROM bloco WHERE numero = '$bloco')";
     $query = $mysqli->query($sql);
     $query0 = mysqli_query($mysqli,$sql0);

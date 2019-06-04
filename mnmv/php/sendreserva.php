@@ -16,7 +16,7 @@ $sql1 = "SELECT Idacademico FROM academico WHERE nome = '$acad'";
 $query1 = mysqli_query($mysqli,$sql1);
 $row1 = mysqli_fetch_assoc($query1);
 $idacad =  $row1['Idacademico'];
-$sql2 = "SELECT idequipamento FROM equipamento WHERE numeracao = '$num' AND idtipo = (SELECT idtipo FROM tipo WHERE Descricao = '$tipo')";
+$sql2 = "SELECT idequipamento FROM equipamento WHERE numeracao = '$num' AND idtipo = (SELECT idtipo FROM tipo WHERE Descricao = '$tipo') AND idbloco = (SELECT idbloco FROM bloco WHERE numero = '$bloco')";
 $query2 = mysqli_query($mysqli,$sql2);
 $row2 = mysqli_fetch_assoc($query2);
 $idquip = $row2['idequipamento'];

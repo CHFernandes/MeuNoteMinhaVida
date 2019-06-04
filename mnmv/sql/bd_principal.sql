@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: 22-Maio-2019 às 13:56
+-- Generation Time: 04-Jun-2019 às 22:13
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -97,11 +97,18 @@ CREATE TABLE `emprestimo` (
 INSERT INTO `emprestimo` (`idemprestimo`, `idacademico`, `idequipamento`, `idsala`, `datainicio`, `datafim`, `status`) VALUES
 (33, 3, 14, 1, '2019-05-20 17:24:57', '2019-05-20 17:25:42', 0),
 (34, 3, 20, 1, '2019-05-20 17:24:57', '2019-05-20 17:26:09', 0),
-(37, 3, 14, 1, '2019-05-20 18:05:14', '2019-05-20 18:55:14', 1),
-(38, 3, 12, 1, '2019-05-21 12:37:34', '2019-05-21 13:27:34', 1),
-(39, 3, 23, 1, '2019-05-21 12:37:34', '2019-05-21 13:27:34', 1),
-(40, 3, 17, 1, '2019-05-21 12:37:59', '2019-05-21 13:27:59', 1),
-(41, 3, 20, 1, '2019-05-21 12:38:00', '2019-05-21 13:28:00', 1);
+(37, 3, 14, 1, '2019-05-20 18:05:14', '2019-06-04 16:08:04', 0),
+(38, 3, 12, 1, '2019-05-21 12:37:34', '2019-06-04 16:08:22', 0),
+(39, 3, 23, 1, '2019-05-21 12:37:34', '2019-06-04 16:08:26', 0),
+(40, 3, 17, 1, '2019-05-21 12:37:59', '2019-06-04 16:08:30', 0),
+(41, 3, 20, 1, '2019-05-21 12:38:00', '2019-06-04 16:09:01', 0),
+(42, 3, 14, 1, '2019-06-04 16:47:06', '2019-06-04 17:06:13', 0),
+(43, 3, 23, 1, '2019-06-04 16:47:06', '2019-06-04 17:06:24', 0),
+(44, 5, 17, 1, '2019-06-04 16:54:30', '2019-06-04 17:06:37', 0),
+(45, 5, 13, 1, '2019-06-04 16:54:30', '2019-06-04 17:06:19', 0),
+(46, 5, 12, 1, '2019-06-06 07:40:00', '2019-06-04 17:06:31', 0),
+(47, 5, 16, 1, '2019-06-06 07:40:00', '2019-06-04 17:07:23', 0),
+(48, 5, 19, 1, '2019-06-06 07:40:00', '2019-06-04 17:06:41', 0);
 
 -- --------------------------------------------------------
 
@@ -113,24 +120,26 @@ CREATE TABLE `equipamento` (
   `idequipamento` int(11) NOT NULL,
   `numeracao` int(11) NOT NULL,
   `idtipo` int(11) NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `status` tinyint(1) NOT NULL,
+  `idbloco` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `equipamento`
 --
 
-INSERT INTO `equipamento` (`idequipamento`, `numeracao`, `idtipo`, `status`) VALUES
-(12, 52, 1, 1),
-(13, 44, 1, 1),
-(14, 67, 1, 1),
-(15, 14, 2, 1),
-(16, 22, 2, 0),
-(17, 67, 2, 1),
-(18, 32, 3, 0),
-(19, 45, 3, 0),
-(20, 77, 4, 1),
-(23, 33, 2, 1);
+INSERT INTO `equipamento` (`idequipamento`, `numeracao`, `idtipo`, `status`, `idbloco`) VALUES
+(12, 52, 1, 0, 2),
+(13, 44, 1, 0, 2),
+(14, 67, 1, 0, 2),
+(15, 14, 2, 0, 2),
+(16, 22, 2, 0, 2),
+(17, 67, 2, 0, 2),
+(18, 32, 3, 0, 2),
+(19, 45, 3, 0, 2),
+(20, 77, 4, 0, 2),
+(23, 33, 2, 0, 2),
+(28, 15, 2, 0, 2);
 
 -- --------------------------------------------------------
 
@@ -204,7 +213,8 @@ ALTER TABLE `emprestimo`
 --
 ALTER TABLE `equipamento`
   ADD PRIMARY KEY (`idequipamento`),
-  ADD KEY `idtipo` (`idtipo`);
+  ADD KEY `idtipo` (`idtipo`),
+  ADD KEY `FK_idbloco` (`idbloco`);
 
 --
 -- Indexes for table `sala`
@@ -239,13 +249,13 @@ ALTER TABLE `bloco`
 -- AUTO_INCREMENT for table `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  MODIFY `idemprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `idemprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `equipamento`
 --
 ALTER TABLE `equipamento`
-  MODIFY `idequipamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idequipamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `sala`
@@ -275,7 +285,8 @@ ALTER TABLE `emprestimo`
 -- Limitadores para a tabela `equipamento`
 --
 ALTER TABLE `equipamento`
-  ADD CONSTRAINT `idtipo` FOREIGN KEY (`idtipo`) REFERENCES `tipo` (`idtipo`);
+  ADD CONSTRAINT `FK_idbloco` FOREIGN KEY (`idbloco`) REFERENCES `bloco` (`idbloco`),
+  ADD CONSTRAINT `idtipo` FOREIGN KEY (`idtipo`) REFERENCES `tipo` (`idtipo`) ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `sala`
