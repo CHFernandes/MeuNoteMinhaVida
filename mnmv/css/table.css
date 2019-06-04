@@ -28,4 +28,18 @@
     .arena table tbody tr{
       background: white;
     }
+.arena table thead .busca th{
+      background: #000;
+      color: #fff;
+      text-align: left;
+      border-top-left-radius: 0em;
+      border-top-right-radius: 0em;
+    }
+.busca input{
+padding-top: 0.3em;
+padding-bottom: 0.3em;
+width: 100%;
+border: solid black;
+}
+
 
