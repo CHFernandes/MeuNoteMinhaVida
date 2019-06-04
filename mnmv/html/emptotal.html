@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
     <link rel="stylesheet" type="text/css" href="../css/table.css">
     <link rel="stylesheet" type="text/css" href="../css/ultimatd.css">
+    <script type="text/javascript" src="../js/filtro.js"></script>
 </head>
     <body id="total">
         
@@ -44,7 +45,7 @@
         </div>
         
         <div class="arena" id="conteudo"> 
-            <table align="center" border="0">
+            <table align="center" border="0" id="tabela">
             <thead>
                 <tr>
                     <th>Acadêmico</th>
@@ -54,6 +55,15 @@
                     <th>Bloco</th>
                     <th>Data de empréstimo</th>
                     <th>Data de devolução</th>
+                </tr>
+                <tr class="busca">
+                    <th><input type="text" id="txtColuna1"/ placeholder="Aca..."></th>
+                    <th><input type="text" id="txtColuna2"/ placeholder="Equ..."></th>
+                    <th><input type="text" id="txtColuna3"/ placeholder="Tip..."></th>
+                    <th><input type="text" id="txtColuna4"/ placeholder="Sal..."></th>
+                    <th><input type="text" id="txtColuna5"/ placeholder="Blo..."></th>
+                    <th><input type="text" id="txtColuna6"/ placeholder="Dat..."></th>
+                    <th><input type="text" id="txtColuna7"/ placeholder="Dat..."></th>
                 </tr>
             </thead>
             <tbody id="lista">

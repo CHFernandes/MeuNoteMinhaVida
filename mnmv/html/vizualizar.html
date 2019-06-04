@@ -9,6 +9,7 @@
     <script type="text/javascript" src="../js/ap.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
     <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <script type="text/javascript" src="../js/filtro.js"></script>
 
 </head>
 
@@ -31,7 +32,7 @@
         </div>
         
         <div class="arena" id="conteudo">
-    <table align="center" border="0">
+    <table align="center" border="0" id="tabela">
             <thead>
                 <tr>
                     <th>Numeração</th>
@@ -42,6 +43,15 @@
                     <th>Data Esperada de Devolução</th>
                     <th>Status</th>
                 </tr>
+                <tr class="busca">
+                    <th><input type="text" id="txtColuna1"/ placeholder="Num..."></th>
+                    <th><input type="text" id="txtColuna2"/ placeholder="Tip..."></th>
+                    <th><input type="text" id="txtColuna3"/ placeholder="Sal..."></th>
+                    <th><input type="text" id="txtColuna4"/ placeholder="Blo..."></th>
+                    <th><input type="text" id="txtColuna5"/ placeholder="Dat..."></th>
+                    <th><input type="text" id="txtColuna6"/ placeholder="Dat..."></th>
+                    <th><input type="text" id="txtColuna7"/ placeholder="Sta..."></th>
+                </tr>      
             </thead>
             <tbody id="lista">
             </tbody>
