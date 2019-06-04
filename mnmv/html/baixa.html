@@ -6,7 +6,6 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
     <script type="text/javascript" src="../js/baixa.js"></script>
-    <script type="text/javascript" src="../js/add.js"></script>
     <script type="text/javascript" src="../js/insert.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
     <link rel="stylesheet" type="text/css" href="../css/ButtonAndInputs.css">
@@ -39,6 +38,9 @@
              <tr>
                 <td><a href="baixa.html"><button>Dar baixa na devolução</button></a></td>
             </tr>
+            <tr>
+                <td><a href="enviar_reserva.html"><button>Enviar Reserva</button></a></td>
+            </tr>
             </table>
         </div>
         
@@ -48,6 +50,7 @@
             <tr>
                 <td>Tipo</td>
                 <td><select class="tipo" name="0">
+                        <option></option>
                         <option value="N">Notebook</option>
                         <option value="F">Fonte</option>
                         <option value="T">Torre</option>
@@ -63,7 +66,6 @@
         <tfoot>
             <tr>
                 <td><button id="enviar">Enviar</button></td>
-<!--                <td><button id="add">Adicionar equipamento</button></td>-->
             </tr>
         </tfoot>
     </table>

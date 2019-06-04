@@ -45,8 +45,10 @@ if(mysqli_num_rows($result) > 0){
         $retorno[$i]['status'] = $row['status'];
         if($row['status'] == '0'){
             $retorno[$i]['statusstring'] = 'Fechado';
-        }else{
+        }elseif($row['status'] == '1'){
             $retorno[$i]['statusstring'] = 'Aberto';
+        }elseif($row['status'] == '2'){
+            $retorno[$i]['statusstring'] = 'Reservado';
         }
         $i = $i + 1;
     }

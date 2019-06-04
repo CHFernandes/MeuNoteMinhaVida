@@ -22,6 +22,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "../php/emprestar.php",
+            async: false,
             data: {
                 aulas: aulas,
                 bloco: bloco,
@@ -35,7 +36,7 @@ $(document).ready(function () {
                     alert("Empréstimo realizado com sucesso");
                     window.location = 'menu.html';
                 } else {
-                    alert("Índice de notebook inexistente");
+                    alert("Índice de equipamento inexistente");
                 }
             }
         });
