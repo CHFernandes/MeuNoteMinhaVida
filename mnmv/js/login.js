@@ -8,7 +8,6 @@ $(document).ready(function () {
                 senha: $("#senha").val()
             },
             success: function (retorno) {
-                alert(retorno);
                 if (retorno == '2') {
                     window.location = 'html/niaa.html';
                 } else {
