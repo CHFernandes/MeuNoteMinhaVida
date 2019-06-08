@@ -28,10 +28,10 @@ $sql4 = "SELECT idemprestimo FROM emprestimo WHERE idacademico = '$idacad' AND i
 $query4 = mysqli_query($mysqli,$sql4);
 if(mysqli_num_rows($query4) == 0){
     $row4 = mysqli_fetch_assoc($query4);
-    $idemp =  $row4['idemprestimo'];
-    $sql5 = "UPDATE emprestimo SET status = '1' WHERE idemprestimo = '$idemp'";
+    $idemp = $row4['idemprestimo'];
+    $sql5 = "UPDATE emprestimo SET status = '0' WHERE idemprestimo = '$idemp'";
     $query5 = mysqli_query($mysqli,$sql5);
-    $sql6 = "UPDATE equipamento SET status = '1' WHERE idequipamento = '$idquip'";
+    $sql6 = "UPDATE equipamento SET status = '0' WHERE idequipamento = '$idquip'";
     $query6 = mysqli_query($mysqli,$sql6);
     echo "1";
 }else{
