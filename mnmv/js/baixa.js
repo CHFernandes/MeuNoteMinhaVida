@@ -11,7 +11,7 @@ $(document).ready(function () {
                 
                 if (retorno == '1') {
                     alert("Baixa realizada com sucesso");
-                    window.location = 'niaa.html';
+                    window.location = 'analisar.html';
                 } else {
                     alert("Erro");
                 }

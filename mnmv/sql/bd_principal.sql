@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: 04-Jun-2019 às 22:13
+-- Generation Time: 10-Jun-2019 às 14:22
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -33,19 +33,20 @@ CREATE TABLE `academico` (
   `nome` varchar(255) NOT NULL,
   `matricula` int(11) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `tipo` char(1) NOT NULL
+  `tipo` char(1) NOT NULL,
+  `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `academico`
 --
 
-INSERT INTO `academico` (`Idacademico`, `nome`, `matricula`, `senha`, `tipo`) VALUES
-(1, 'Thiago José Saquette Fagundes', 1, 'naoseimeunome', '1'),
-(2, 'Diogo Caron Feld', 5, 'diogo.feld', '1'),
-(3, 'Carlos Henrique Fernandes', 7, 'eitapega', '1'),
-(4, 'NIAA', 127, 'admin', '0'),
-(5, 'Kelly Betio', 10, 'kelly', '2');
+INSERT INTO `academico` (`Idacademico`, `nome`, `matricula`, `senha`, `tipo`, `status`) VALUES
+(1, 'Thiago José Saquette Fagundes', 1, 'naoseimeunome', '1', 0),
+(2, 'Diogo Caron Feld', 5, 'diogo.feld', '1', 1),
+(3, 'Carlos Henrique Fernandes', 7, 'eitapega', '1', 0),
+(4, 'NIAA', 127, 'admin', '0', 0),
+(5, 'Kelly Betio', 10, 'kelly', '2', 0);
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,9 @@ INSERT INTO `emprestimo` (`idemprestimo`, `idacademico`, `idequipamento`, `idsal
 (45, 5, 13, 1, '2019-06-04 16:54:30', '2019-06-04 17:06:19', 0),
 (46, 5, 12, 1, '2019-06-06 07:40:00', '2019-06-04 17:06:31', 0),
 (47, 5, 16, 1, '2019-06-06 07:40:00', '2019-06-04 17:07:23', 0),
-(48, 5, 19, 1, '2019-06-06 07:40:00', '2019-06-04 17:06:41', 0);
+(48, 5, 19, 1, '2019-06-06 07:40:00', '2019-06-04 17:06:41', 0),
+(49, 3, 14, 1, '2019-06-08 16:47:45', '2019-06-08 16:48:00', 0),
+(50, 3, 28, 1, '2019-06-08 16:47:45', '2019-06-10 08:06:36', 0);
 
 -- --------------------------------------------------------
 
@@ -139,7 +142,36 @@ INSERT INTO `equipamento` (`idequipamento`, `numeracao`, `idtipo`, `status`, `id
 (19, 45, 3, 0, 2),
 (20, 77, 4, 0, 2),
 (23, 33, 2, 0, 2),
-(28, 15, 2, 0, 2);
+(28, 15, 2, 3, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `relatorio`
+--
+
+CREATE TABLE `relatorio` (
+  `idrelatorio` int(11) NOT NULL,
+  `relator` varchar(255) NOT NULL,
+  `horario` datetime NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `idemprestimo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `relatorio`
+--
+
+INSERT INTO `relatorio` (`idrelatorio`, `relator`, `horario`, `descricao`, `idemprestimo`) VALUES
+(1, 'Jeremia', '2019-06-10 08:16:52', '7', 50),
+(2, '', '2019-06-10 08:18:07', '', 50),
+(3, '', '2019-06-10 08:18:11', '', 50),
+(4, '', '2019-06-10 08:18:32', '', 50),
+(5, '', '2019-06-10 08:19:03', '', 50),
+(6, '', '2019-06-10 08:19:11', '', 50),
+(7, '', '2019-06-10 08:19:14', '', 50),
+(8, '', '2019-06-10 08:43:51', '', 50),
+(9, '', '2019-06-10 08:44:36', '', 50);
 
 -- --------------------------------------------------------
 
@@ -217,6 +249,13 @@ ALTER TABLE `equipamento`
   ADD KEY `FK_idbloco` (`idbloco`);
 
 --
+-- Indexes for table `relatorio`
+--
+ALTER TABLE `relatorio`
+  ADD PRIMARY KEY (`idrelatorio`),
+  ADD KEY `idemprestimo` (`idemprestimo`);
+
+--
 -- Indexes for table `sala`
 --
 ALTER TABLE `sala`
@@ -249,13 +288,19 @@ ALTER TABLE `bloco`
 -- AUTO_INCREMENT for table `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  MODIFY `idemprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `idemprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `equipamento`
 --
 ALTER TABLE `equipamento`
   MODIFY `idequipamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `relatorio`
+--
+ALTER TABLE `relatorio`
+  MODIFY `idrelatorio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sala`
@@ -287,6 +332,12 @@ ALTER TABLE `emprestimo`
 ALTER TABLE `equipamento`
   ADD CONSTRAINT `FK_idbloco` FOREIGN KEY (`idbloco`) REFERENCES `bloco` (`idbloco`),
   ADD CONSTRAINT `idtipo` FOREIGN KEY (`idtipo`) REFERENCES `tipo` (`idtipo`) ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `relatorio`
+--
+ALTER TABLE `relatorio`
+  ADD CONSTRAINT `idemprestimo` FOREIGN KEY (`idemprestimo`) REFERENCES `emprestimo` (`idemprestimo`);
 
 --
 -- Limitadores para a tabela `sala`

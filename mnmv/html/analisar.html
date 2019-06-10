@@ -1,20 +1,15 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>Envio de Reservas</title>
+    <title>Analise de Equipamento</title>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/verifica.js"></script>
-    <script type="text/javascript" src="../js/insertreservado.js"></script>
-    <script type="text/javascript" src="../js/sendreserva.js"></script>
-    <script type="text/javascript" src="../js/cancelar.js"></script>
+    <script type="text/javascript" src="../js/analise.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
     <link rel="stylesheet" type="text/css" href="../css/ButtonAndInputs.css">
 </head>
-
-<body id="i_2">
-
+<body>
     <div class="barratopo">
         <h1>Envio de Reservas</h1>
     </div>
@@ -47,26 +42,29 @@
             </tr>
         </table>
     </div>
-
     <div class="arena" id="i_2">
         <table align="center" border="0">
-            <thead>
+            <tbody>
                 <tr>
-                    <th>Academico</th>
-                    <th>Numeração</th>
-                    <th>Tipo</th>
-                    <th>Sala</th>
-                    <th>Bloco</th>
-                    <th>Data-Hora Reservada</th>
-                    <th>Data-Hora da Devolução</th>
-                    <th>Enviar</th>
-                    <th>Cancelar</th>
+                    <td colspan="2">Nome</td>
                 </tr>
-            </thead>
-            <tbody id="lista">
+                <tr>
+                    <td colspan="2"><input id="nome" type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Inserir relatório</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea id="rel" maxlength="255"></textarea></td>
+                </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td><button id="manu">Enviar equipamento para manutenção</button></td>
+                    <td><button id="send">Enviar equipamento para estoque</button></td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </body>
-
 </html>

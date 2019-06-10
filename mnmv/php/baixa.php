@@ -33,6 +33,8 @@ if(mysqli_num_rows($result) == 1){
     $query4 = mysqli_query($mysqli,$sql4);
     $sql5 = "UPDATE emprestimo SET status = '0' WHERE idemprestimo = '$idemp'";
     $query5 = mysqli_query($mysqli,$sql5);
+    
+    $_SESSION['idemp'] = $idemp;
     echo '1';
 }else{
     echo '0';
