@@ -16,6 +16,8 @@ $datainicio = $datain->format('Y-m-d H:i:s');
 $sql2 = "INSERT into relatorio(relator, horario, descricao, idemprestimo) VALUES ('$nome', '$datainicio', '$rel', '$idemp')";
 $query2 = mysqli_query($mysqli, $sql2);
 
+$_SESSION['idemp'] = null;
+
 echo "1";
 
 ?>
