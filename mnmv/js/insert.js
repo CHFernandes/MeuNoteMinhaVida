@@ -77,6 +77,7 @@ $(document).ready(function () {
         });
         
         $("body").on('change', '.tipo', function () {
+            
             var bloco = $('.bloco').val();
             var tipo = $(this).val();
             var name = $(this).attr('name');
