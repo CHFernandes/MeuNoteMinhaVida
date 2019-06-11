@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Manutenções</title>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/verifica.js"></script>
+    <script type="text/javascript" src="../js/listmanu.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/backgroundAndDivs.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <link rel="stylesheet" type="text/css" href="../css/ultimatd.css">
+    <script type="text/javascript" src="../js/filtro.js"></script>
+</head>
+    <body id="total">
+        
+        <div class="barratopo"><h1>Relatório de manutenções</h1></div>
+        
+        <div class="barramenu"> 
+            <table>
+            <tr>
+                <td><a href="niaa.html"><button class="sair">Voltar</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="vequip.html"><button>Vizualizar Equipamentos</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="vequipemp.html"><button>Vizualizar Equipamentos Emprestados</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="emptotal.html"><button >Vizualizar Empréstimos Totais</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="empaberto.html"><button>Vizualizar Empréstimos Abertos</button></a></td>
+            </tr>
+             <tr>
+                <td><a href="cadastro.html"><button>Cadastrar Novos Equipamentos</button></a></td>
+            </tr>
+             <tr>
+                <td><a href="baixa.html"><button>Dar baixa na devolução</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="enviar_reserva.html"><button>Enviar Reserva</button></a></td>
+            </tr>
+            </table>
+        </div>
+        
+        <div class="arena" id="conteudo"> 
+            <table align="center" border="0" id="tabela">
+            <thead>
+                <tr>
+                    <th>Relator</th>
+                    <th>Horário</th>
+                    <th>Descrição</th>
+                    <th>Numeração do Equipamento</th>
+                    <th>Tipo</th>
+                </tr>
+                <tr class="busca">
+                    <th><input type="text" id="txtColuna1"/ placeholder="Rel..."></th>
+                    <th><input type="text" id="txtColuna2"/ placeholder="Hor..."></th>
+                    <th><input type="text" id="txtColuna3"/ placeholder="Des..."></th>
+                    <th><input type="text" id="txtColuna4"/ placeholder="Num..."></th>
+                    <th><input type="text" id="txtColuna5"/ placeholder="Tip..."></th>
+                </tr>
+            </thead>
+            <tbody id="lista">
+            </tbody>
+        </table>
+        </div>
+        <div class="barrainferior"> 
+        </div>
+    </body>     
+</html>

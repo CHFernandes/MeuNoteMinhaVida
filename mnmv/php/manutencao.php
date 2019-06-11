@@ -21,7 +21,7 @@ $datain = new datetime();
 $datain->settimezone($fuso);
 $datainicio = $datain->format('Y-m-d H:i:s');
 
-$sql2 = "INSERT into relatorio(relator, horario, descricao, idemprestimo) VALUES ('$nome', '$datainicio', '$rel', '$idemp')";
+$sql2 = "INSERT into relatorio(relator, horario, descricao, idemprestimo, idequipamento) VALUES ('$nome', '$datainicio', '$rel', '$idemp', $id)";
 $query2 = mysqli_query($mysqli, $sql2);
 
 echo "1";

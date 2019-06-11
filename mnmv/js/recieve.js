@@ -13,7 +13,7 @@ $(document).ready(function(){
                     $(".equip").html("");
                     for (var i = stringster.length - 1; i >= 0; i--) {
 
-                        if (stringster[i].status == '0') {
+                        if (stringster[i].status == '3') {
                                 if (stringster[i].tipo == tipo) {
                                     $(".equip").append(
                                         "<option>" + stringster[i].numeracao + "</option>");
@@ -27,7 +27,7 @@ $(document).ready(function(){
    $("#enviar").click(function () {
         $.ajax({
             type: "POST",
-            url: "../php/sendmanu.php",
+            url: "../php/recieve.php",
            data: {
                 nome: $("#nome").val(),
                 equip: $(".equip").val(),
@@ -36,8 +36,10 @@ $(document).ready(function(){
             },
             success: function (retorno) {
                 
+                alert(retorno);
+                
                 if (retorno == '1') {
-                    alert("Equipamento enviado para manutenção");
+                    alert("Equipamento retirado da manutenção");
                     window.location = 'niaa.html';
                 } else {
                     alert("Erro");

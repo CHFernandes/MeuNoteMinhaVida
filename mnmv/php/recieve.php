@@ -14,7 +14,7 @@ if(mysqli_num_rows($query0) == 1){
 $row = mysqli_fetch_assoc($query0);
 $id = $row['idequipamento'];
 
-$sql = "Update equipamento set status = '3' where idequipamento = '$id'";
+$sql = "Update equipamento set status = '0' where idequipamento = '$id'";
 $query = mysqli_query($mysqli, $sql);
 
 $nome = $_POST['nome'];
