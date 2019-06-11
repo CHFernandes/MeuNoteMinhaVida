@@ -1,5 +1,21 @@
 $(document).ready(function () {
     $("#botao").click(function (){
+        
+                vazio ='';
+                if(vazio == $("#nome").val()){
+                    $("#nome").addClass("erro");
+                }else{
+                    $("#nome").removeClass("erro");
+                }
+                if(vazio == $("#user").val()){
+                    $("#user").addClass("erro");
+                }else{
+                    $("#user").removeClass("erro");
+                }
+                if ($("#nome").hasClass("erro") == false && $("#user").hasClass("erro") == false) {
+                   alert('funciona')
+
+
         $.ajax({
             type:"POST",
             url:"../php/block.php",
@@ -16,5 +32,10 @@ $(document).ready(function () {
                 }
             }
         });
+
+    }else{
+        alert("insira nomes e identicador de Usuario");
+    }
+
     });
 });

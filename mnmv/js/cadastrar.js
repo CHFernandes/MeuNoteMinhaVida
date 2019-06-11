@@ -17,7 +17,7 @@ $(document).ready(function () {
                 $("#enviar").click(function() {
                 vazio ='';
                 if(vazio == $("#bloco").val()){
-                    $("#num").addClass("erro");
+                    $("#bloco").addClass("erro");
                 }else{
                     $("#bloco").removeClass("erro");
                 }
