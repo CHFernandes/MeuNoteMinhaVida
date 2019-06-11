@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#botao").click(function (){
-        
+
                 vazio ='';
                 if(vazio == $("#nome").val()){
                     $("#nome").addClass("erro");
@@ -13,9 +13,7 @@ $(document).ready(function () {
                     $("#user").removeClass("erro");
                 }
                 if ($("#nome").hasClass("erro") == false && $("#user").hasClass("erro") == false) {
-                   alert('funciona')
-
-
+            
         $.ajax({
             type:"POST",
             url:"../php/block.php",
