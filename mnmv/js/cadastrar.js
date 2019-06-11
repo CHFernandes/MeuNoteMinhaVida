@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 $(document).ready(function () {
       $.ajax({
                 type: "GET",
@@ -24,11 +15,9 @@ $(document).ready(function () {
             });
 
                 $("#enviar").click(function () {
-        if(($("#bloco").val())=='' || $("#num").val()==''||$("#tipo").val()==''){
-            alert("você deve inserir todos os campos");
-        }else{
-       
-                    $.ajax({
+        if(!($("#bloco").val() =='') $$ !($("#num").val()=='') $$ !($("#tipo").val()=='')){
+
+                        $.ajax({
                         type: "POST",
                         url: "../php/cadastrar.php",
                         data: {
@@ -45,6 +34,7 @@ $(document).ready(function () {
                             }
                         }
                     });
-                }
+                } else {alert("insira alguma coisa por favor");
+            }
                 });
             });
