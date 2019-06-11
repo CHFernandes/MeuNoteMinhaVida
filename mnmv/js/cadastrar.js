@@ -18,7 +18,6 @@ $(document).ready(function () {
                 vazio ='';
                 if(vazio == $("#bloco").val()){
                     $("#num").addClass("erro");
-                    alert("vaizo");
                 }else{
                     $("#bloco").removeClass("erro");
                 }
@@ -34,6 +33,7 @@ $(document).ready(function () {
                 }
 
         if ($("#tipo").hasClass("erro") == false && $("#bloco").hasClass("erro") == false && $("#num").hasClass("erro") == false) {
+            alert('o bloco é  ' + $("#bloco").val())
                 $.ajax({
 
                         type: "POST",
@@ -54,7 +54,7 @@ $(document).ready(function () {
                     });
 
                 }else{
-                    alert("Em nome de SANTO CRISTO insira todos os campos");
+                    alert("preencha todos");
                 }
                 });
             });
