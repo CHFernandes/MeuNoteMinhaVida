@@ -14,10 +14,28 @@ $(document).ready(function () {
                 }
             });
 
-                $("#enviar").click(function () {
-        if(!($("#bloco").val() =='') $$ !($("#num").val()=='') $$ !($("#tipo").val()=='')){
+                $("#enviar").click(function() {
+                vazio ='';
+                if(vazio == $("#bloco").val()){
+                    $("#num").addClass("erro");
+                    alert("vaizo");
+                }else{
+                    $("#bloco").removeClass("erro");
+                }
+                if(vazio == $("#num").val()){
+                    $("#num").addClass("erro");
+                }else{
+                    $("#num").removeClass("erro");
+                }
+                if(vazio == $("#tipo").val()){
+                    $("#tipo").addClass("erro");
+                }else{
+                    $("#tipo").removeClass("erro");
+                }
 
-                        $.ajax({
+        if ($("#tipo").hasClass("erro") == false && $("#bloco").hasClass("erro") == false && $("#num").hasClass("erro") == false) {
+                $.ajax({
+
                         type: "POST",
                         url: "../php/cadastrar.php",
                         data: {
@@ -34,7 +52,9 @@ $(document).ready(function () {
                             }
                         }
                     });
-                } else {alert("insira alguma coisa por favor");
-            }
+
+                }else{
+                    alert("Em nome de SANTO CRISTO insira todos os campos");
+                }
                 });
             });
