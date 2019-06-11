@@ -39,7 +39,9 @@
 padding-top: 0.3em;
 padding-bottom: 0.3em;
 width: 100%;
-border: solid black;
+border: black;
+border-radius: 0.25em;
 }
+
 
 
