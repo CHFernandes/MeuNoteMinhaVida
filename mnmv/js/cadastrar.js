@@ -33,7 +33,6 @@ $(document).ready(function () {
                 }
 
         if ($("#tipo").hasClass("erro") == false && $("#bloco").hasClass("erro") == false && $("#num").hasClass("erro") == false) {
-            alert('o bloco é  ' + $("#bloco").val())
                 $.ajax({
 
                         type: "POST",
