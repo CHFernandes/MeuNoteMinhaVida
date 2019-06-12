@@ -5,7 +5,7 @@ $(document).ready(function () {
         
         var sala = $('.sala').val();
         
-        var aulas = $('.aulas').val();
+        var aulas = $('.Aulas').val();
         
         var equip = new Array();
 
